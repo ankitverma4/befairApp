@@ -7,12 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-input  text-center type="tel" maxlength="10"   placeholder="Please enter your mobile number"  ></ion-input>
+  <ion-item *ngIf="!showHide">
+    <ion-input text-center type="tel" maxlength="10"   placeholder="Please enter your mobile number"  ></ion-input>
 </ion-item>     
-<ion-item>
-  <ion-input  text-center type="tel" maxlength="10"   placeholder="Please enter your mobile number"  ></ion-input>
+<ion-item *ngIf="!showHide"  >
+  <ion-input text-center type="tel" maxlength="10"   placeholder="Please enter your password"  ></ion-input>
 
 </ion-item>    
-<button ion-button full (click)='movepage()'>Full Button</button> 
+<button ion-button full (click)='movepage()' *ngIf="!showHide">Login</button>
+<button ion-button full (click)='signUp()'*ngIf="!showHide" >Sign up here</button> 
+
+<ion-item *ngIf="showHide" >
+  <ion-input text-center type="tel" maxlength="10"   placeholder="Please enter your mobile number to sign up here"  ></ion-input>
+</ion-item>     
+<ion-item *ngIf="showHide">
+<ion-input  text-center type="tel" maxlength="10"   placeholder="Please enter your password to sign up"  ></ion-input>
+</ion-item>
+<ion-item *ngIf="showHide">
+  <button ion-button full (click)='signUp()'>Sign up here</button> 
+
+</ion-item>   
 </ion-content>

@@ -9,12 +9,16 @@ import { DashboardPage } from '../dashboard/dashboard';
 
 })
 export class HomePage {
-public rootPage : any =  HomePage;
+  public showHide:boolean= false;
+  public rootPage : any =  HomePage;
   constructor(public navCtrl: NavController) {
 
   }
 
   movepage(){
-    this.navCtrl.push(DashboardPage);
+    this.navCtrl.push(DashboardPage);   
+  }
+  signUp(){
+    return this.showHide = !this.showHide;
   }
 }
